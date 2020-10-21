@@ -1,0 +1,9 @@
+---
+
+- hosts: localhost
+  gather_facts: false
+  tasks:
+  - name: land datasource template
+    template:
+      src: standalone.xml.j2
+      dest: /opt/jboss/wildfly/standalone/configuration/standalone.xml
