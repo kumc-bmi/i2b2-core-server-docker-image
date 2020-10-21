@@ -157,7 +157,7 @@
 {% for item in datasources %}
 
                 <datasource jta="false" jndi-name="java:/{{ item }}"
-                    pool-name="{{ item }}" enabled="true" use-ccm="false">
+                    pool-name="{{ item }}" enabled="true" use-ccm="false" statistics-enabled="true">
                     <connection-url>{{ datasources[item].connection_url }}</connection-url>
                     <driver-class>{{ datasources[item].driver_class }}</driver-class>
                     <driver>{{ datasources[item].driver }}</driver>
