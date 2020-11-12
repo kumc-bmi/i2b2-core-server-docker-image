@@ -3,6 +3,7 @@
 set -euxo pipefail
 
 : "$i2b2_wildfly_admin_pass"
+: "$TZ"
 
 ansible-playbook configure_datasources.yml -e @datasource_vars.yml
 
