@@ -4,8 +4,9 @@ FROM jboss/wildfly:17.0.1.Final
 ARG i2b2_version="76f86b0"
 
 USER root
-RUN yum install -y ant wget centos-release-ansible-27
-RUN yum install -y ansible
+RUN rm -rf /etc/yum.repos.d/*
+COPY centos7.repo /etc/yum.repos.d/cent7.repo
+RUN yum install -y ant wget ansible
 
 # build and install i2b2
 USER jboss

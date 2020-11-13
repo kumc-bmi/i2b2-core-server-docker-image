@@ -1,0 +1,23 @@
+[base]
+name=CentOS $releasever – Base
+baseurl=https://mirrors.ocf.berkeley.edu/centos/7/os/$basearch/
+gpgcheck=0
+enabled=1
+
+[updates]
+name=CentOS $releasever – Updates
+baseurl=https://mirrors.ocf.berkeley.edu/centos/7/updates/$basearch/
+gpgcheck=0
+enabled=1
+
+[extras]
+name=CentOS $releasever – Extras
+baseurl=https://mirrors.ocf.berkeley.edu/centos/7/extras/$basearch/
+gpgcheck=0
+enabled=1
+
+[epel]
+name=CentOS $releasever – epel
+baseurl=https://mirror.sfo12.us.leaseweb.net/epel/7/$basearch/
+gpgcheck=0
+enabled=1
