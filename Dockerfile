@@ -8,6 +8,9 @@ RUN rm -rf /etc/yum.repos.d/*
 COPY centos7.repo /etc/yum.repos.d/cent7.repo
 RUN yum install -y ant wget ansible
 
+RUN chown jboss:jboss /etc/pki/ca-trust/extracted/java/cacerts &&\
+    chmod 600 /etc/pki/ca-trust/extracted/java/cacerts
+
 # build and install i2b2
 USER jboss
 RUN mkdir i2b2-core-server &&\
