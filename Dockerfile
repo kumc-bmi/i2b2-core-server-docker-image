@@ -20,13 +20,7 @@ RUN mkdir i2b2-core-server &&\
     ant dist war &&\
     cp dist/i2b2.war ~/wildfly/standalone/deployments/
 
-RUN cd wildfly/standalone/deployments &&\
-    wget https://github.com/i2b2/i2b2-data/raw/master/edu.harvard.i2b2.data/Release_1-7/ojdbc8.jar &&\
-    wget https://github.com/i2b2/i2b2-data/raw/master/edu.harvard.i2b2.data/Release_1-7/postgresql-42.2.14.jar &&\
-    wget https://github.com/i2b2/i2b2-data/raw/master/edu.harvard.i2b2.data/Release_1-7/mssql-jdbc-8.2.2.jre8.jar
-
 COPY configure_datasources.yml .
 COPY standalone.xml.j2 .
-
 COPY init.sh .
 ENTRYPOINT [ "/bin/bash", "init.sh" ]
