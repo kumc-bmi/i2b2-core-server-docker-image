@@ -166,7 +166,7 @@
                         <password>{{ datasources[item].password }}</password>
                     </security>
                     <validation>
-                        <check-valid-connection-sql>select 1 from dual</check-valid-connection-sql>
+                        <check-valid-connection-sql>select 1{% if db == 'oracle' %} from dual{% endif %}</check-valid-connection-sql>
                         <validate-on-match>false</validate-on-match>
                         <background-validation>true</background-validation>
                         <background-validation-millis>10000</background-validation-millis>
