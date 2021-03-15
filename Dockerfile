@@ -18,7 +18,8 @@ RUN mkdir i2b2-core-server &&\
       | tar --strip-components=1 -C i2b2-core-server -zxvf - &&\
     cd i2b2-core-server/edu.harvard.i2b2.server-common &&\
     ant dist war &&\
-    cp dist/i2b2.war ~/wildfly/standalone/deployments/
+    cp dist/i2b2.war ~/wildfly/standalone/deployments/ &&\
+    cp lib/jdbc/postgresql-42.2.8.jar ~/wildfly/standalone/deployments/
 
 COPY configure_datasources.yml .
 COPY standalone.xml.j2 .
